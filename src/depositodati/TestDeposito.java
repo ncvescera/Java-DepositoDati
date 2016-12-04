@@ -1,20 +1,19 @@
 package depositodati;
 
 /**
- *
- * @author smpiccini & ncvescera
+ * Classe principale
+ * @author smpiccini e ncvescera
  */
 public class TestDeposito {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
         Deposito deposito = new Deposito(10000+(int)(Math.random()*5000));
         Produttore p = new Produttore(deposito);
         
         p.start();
-        p.join();
         
         final int dataPerThread=400;
         Lettore [] lettori= new Lettore[deposito.getSize()/dataPerThread];
