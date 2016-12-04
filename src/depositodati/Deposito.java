@@ -12,11 +12,6 @@ public class Deposito {
     public Deposito(int dim){
         data = new int[dim];
         lastRead = 0;
-        
-        for(int i = 0; i < data.length; i++){
-            data[i] = i;
-            
-        }
     }
     
     public void scrivi(int pos, int n){
@@ -31,7 +26,7 @@ public class Deposito {
         int toRead = lastRead;
         lastRead += n;
         System.out.println(Thread.currentThread().getName()+" legge:");
-        for(int i = toRead; i < toRead+n; i++){
+        for(int i = toRead; i < lastRead; i++){
             System.out.println(data[i]);
         }
     }
